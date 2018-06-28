@@ -1,8 +1,4 @@
-## Class Project (Week 2) - Login with Monzo OAuth Web App
-Using BCrypt and JWT encryptions, with the option to sign-in with Monza via [OAuth](https://developer.github.com/apps/building-oauth-apps/).
-
-<b>Please Note:</b>
-This repository contain two repositories; Express/Mongoose API code is in `/api` directory (managing data), and React code is in `/app` directory (frontend).
+## React Front End for Monzo Digital Rewards Web App
 
 #### Built-on:
 - [Node.js](https://nodejs.org/en/) - Node Package Manager
