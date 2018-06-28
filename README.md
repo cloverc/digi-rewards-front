@@ -1,5 +1,7 @@
 ## React Front End for Monzo Digital Rewards Web App
 
+Backend repo: https://github.com/SharifCoding/digi-reward-back
+
 #### Built-on:
 - [Node.js](https://nodejs.org/en/) - Node Package Manager
 - [React](https://facebook.github.io/react/) - An npm package to get you immediate access to React
