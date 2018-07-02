@@ -1,0 +1,20 @@
+@import '../../vars.scss';
+
+.mzw-nav-container {
+  height: 10vh;
+  padding: 1em 0;
+  background-color: $dark-blue;
+}
+
+.mzw-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @include container;
+}
+
+.mzw-nav .mzw-link {
+  font-size: 1em;
+  font-weight: 600;
+}

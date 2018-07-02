@@ -1,26 +1,49 @@
 import React from 'react';
+import Logo from '../Logo';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import TokenManager from '../../utils/token-manager';
 
-const styles = {
-  activeLink: { fontWeight: 'bold' },
-  padRight: { paddingRight: 20 },
-};
+import './style.scss';
 
-const NavBar = ({ user, isLoggedIn, onLogout }) => (
-  <nav style={{ backgroundColor: 'lightgrey', padding: 10 }}>
-    <NavLink exact to="/" style={styles.padRight} activeStyle={styles.activeLink}>Home</NavLink>
-    {
-      isLoggedIn &&
+/* const NavBar = ({ user, isLoggedIn, onLogout }) => (
+  <nav className="mzw-nav-container">
+    <div className="mzw-nav">
+      <Logo />
+      <NavLink exact to="/">Home</NavLink>
       <div style={{ display: 'inline-block', float: 'right' }}>
-        <span style={styles.padRight}>{user.firstName} {user.lastName}</span>
+        <span>{user.firstName} {user.lastName}</span>
         <button className="monzo-button" onClick={onLogout}>Logout</button>
       </div>
-    }
+    </div>
   </nav>
-);
+); */
 
-NavBar.propTypes = {
+class NavBar extends React.Component {
+  logout() {
+    TokenManager.removeToken();
+    // localStorage.clear();
+    window.location.href = '/login';
+  }
+
+  render() {
+    return (
+      <nav className="mzw-nav-container">
+        <div className="mzw-nav">
+          <Logo />
+          <div>
+            <NavLink exact to="/">Home</NavLink>
+            <button className="monzo-button" onClick={this.logout}>
+              Logout
+            </button>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+}
+
+/* NavBar.propTypes = {
   user: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,
@@ -34,6 +57,6 @@ NavBar.defaultProps = {
     firstName: '',
     lastName: '',
   },
-};
+}; */
 
 export default NavBar;

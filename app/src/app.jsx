@@ -2,10 +2,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import AuthRoute from './components/auth-route';
-import NavBar from './components/navbar';
-import Home from './components/Rewards';
+import NavBar from './components/NavBar';
+import Rewards from './components/Rewards';
 import Login from './components/Login';
-// import SignUp from './components/sign-up';
 // import Secrets from './components/secrets';
 import MonzoLogin from './components/monzo-login';
 
@@ -21,7 +20,7 @@ class App extends React.Component {
     };
 
     this.handleLogin = this.handleLogin.bind(this);
-    this.handleLogout = this.handleLogout.bind(this);
+    /* this.handleLogout = this.handleLogout.bind(this);*/
     this.isLoggedIn = this.isLoggedIn.bind(this);
   }
 
@@ -29,10 +28,10 @@ class App extends React.Component {
     this.setState({ user: TokenManager.getTokenPayload() });
   }
 
-  handleLogout() {
+  /* handleLogout() {
     TokenManager.removeToken();
     this.setState({ user: null });
-  }
+  } */
 
   isLoggedIn() {
     return Boolean(this.state.user) && TokenManager.isTokenValid();
@@ -41,16 +40,17 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar
-          isLoggedIn={this.isLoggedIn()}
-          user={this.state.user}
-          onLogout={this.handleLogout}
+        <AuthRoute
+            exact
+            path="/"
+            component={NavBar}
+            authenticate={this.isLoggedIn}
         />
         <Switch>
           <AuthRoute
             exact
             path="/"
-            component={Home}
+            component={Rewards}
             authenticate={this.isLoggedIn}
           />
           <Route

@@ -6,8 +6,6 @@ import TokenManager from '../utils/token-manager';
 class MonzoLogin extends React.Component {
   componentDidMount() {
     const code = this.props.location.search.match(/code=([^&]+)/)[1];
-    console.log({ search: this.props.location.search });
-    console.log({ code });
     axios.post('http://127.0.0.1:3000/auth/monzo', { code })
       .then((response) => {
         console.log(response);
