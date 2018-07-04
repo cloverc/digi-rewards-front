@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
+import './style.scss';
 import axios from "axios";
 import TokenManager from '../../utils/token-manager';
-import Account from '../Account';
-import './style.scss';
 
-class Rewards extends Component {
+class Account extends Component {
 
     constructor(props) {
         super(props);
@@ -19,7 +18,7 @@ class Rewards extends Component {
         }
     }
 
-    /* componentDidMount() {
+    componentDidMount() {
         let config = {
             headers: {
                 'Authorization': 'Bearer ' + TokenManager.getToken()
@@ -30,15 +29,23 @@ class Rewards extends Component {
         axios.get('http://127.0.0.1:3000/account', config).then((response) => {
             this.setState({'account': response.data.accounts});
         });
-    }*/
+    }
 
     render() {
         return (
-            <div className="App">
-              <Account />
+            <div>
+                <div className="monzo-accounts">
+                <h1>My Rewards</h1>
+                </div>
+                <p>
+                    Account name:
+                    {this.state.account.map(account =>
+                        account.description
+                    )}
+                </p>
             </div>
         );
     }
 }
 
-export default Rewards;
+export default Account;

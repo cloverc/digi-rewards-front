@@ -28,8 +28,8 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <nav className="mzw-nav-container">
-        <div className="mzw-nav">
+      <nav className="monzo-nav-container">
+        <div className="monzo-nav">
           <Logo />
           <div>
             <NavLink exact to="/">Home</NavLink>
