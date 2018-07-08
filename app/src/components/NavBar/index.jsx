@@ -32,7 +32,12 @@ class NavBar extends React.Component {
         <div className="monzo-nav">
           <Logo />
           <div>
-            <NavLink exact to="/">Home</NavLink>
+            <NavLink className="nav-link" exact to="/">
+              My Rewards
+            </NavLink>
+            <NavLink className="nav-link" exact to="/Map">
+              Map
+            </NavLink>
             <button className="monzo-button" onClick={this.logout}>
               Logout
             </button>

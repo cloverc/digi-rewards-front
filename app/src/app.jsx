@@ -20,7 +20,7 @@ class App extends React.Component {
     };
 
     this.handleLogin = this.handleLogin.bind(this);
-    /* this.handleLogout = this.handleLogout.bind(this);*/
+    /* this.handleLogout = this.handleLogout.bind(this); */
     this.isLoggedIn = this.isLoggedIn.bind(this);
   }
 
@@ -41,10 +41,10 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <AuthRoute
-            exact
-            path="/"
-            component={NavBar}
-            authenticate={this.isLoggedIn}
+          exact
+          path="/"
+          component={NavBar}
+          authenticate={this.isLoggedIn}
         />
         <Switch>
           <AuthRoute
