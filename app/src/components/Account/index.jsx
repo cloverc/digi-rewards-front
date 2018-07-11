@@ -1,29 +1,33 @@
 import React from 'react';
 import axios from 'axios';
-import TokenManager from '../../utils/token-manager';
 import './style.scss';
 
 class Account extends React.Component {
   constructor() {
     super();
     this.state = {
-      account: [{
+      account: {
         id: '',
         description: '',
         created: '',
-      }],
+      },
     };
   }
 
   componentDidMount() {
-    const code = TokenManager.getToken(code);
-    axios.get('http://127.0.0.1:3000/Users', {
-      getToken: { code },
-    })
+    axios.get('http://127.0.0.1:3000/account')
       .then((response) => {
-        this.setState({ account: response.data[1].account });
+        this.setState({ account: response.data });
         // adjust data[n] depending on your mongoDB setup
-      });
+        console.log('account:', response);
+      })
+      // axios.get('http://127.0.0.1:3000/transaction')
+      // .then((response) => {
+      //   this.setState({ transaction: response.data });
+      //   // adjust data[n] depending on your mongoDB setup
+      //   console.log('transaction:', response);
+      // })
+      .catch(error => console.log(error));
   }
 
   render() {

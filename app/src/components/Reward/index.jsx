@@ -18,7 +18,12 @@ class Reward extends Component {
       created: '',
       type: ''
       }] */
+      percent: 0,
     };
+  }
+
+  componentDidMount() {
+    this.setState({ percent: 30 });
   }
 
   render() {
@@ -36,7 +41,7 @@ class Reward extends Component {
           <MerchantLogo />
           <div className="nested-items">
             <RewardDescription description="Reward Description blah blah get a free coffee" />
-            <RewardProgress percent={30} />
+            <RewardProgress percent={this.state.percent} />
           </div>
           <TransactionCounter noOfTransactions={3} />
         </li>

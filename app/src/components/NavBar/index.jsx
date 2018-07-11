@@ -36,7 +36,7 @@ class NavBar extends React.Component {
               My Rewards
             </NavLink>
             <NavLink className="nav-link" exact to="/Map">
-              Map
+              Near You
             </NavLink>
             <button className="monzo-button" onClick={this.logout}>
               Logout
