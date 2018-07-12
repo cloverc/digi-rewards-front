@@ -62,13 +62,13 @@ class Map extends React.Component {
   constructor() {
     super();
     this.state = {
-      reward: {
+      reward: [{
         _id: '',
         merchant_name: '',
         merchant_logo: '',
         latitude: 0,
         longitude: 0,
-      },
+      }],
     };
   }
 
