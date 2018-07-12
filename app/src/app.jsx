@@ -5,8 +5,8 @@ import AuthRoute from './components/auth-route';
 import NavBar from './components/NavBar';
 import Rewards from './components/Rewards';
 import Login from './components/Login';
-// import Secrets from './components/secrets';
 import MonzoLogin from './components/monzo-login';
+import Map from './components/Map';
 
 import TokenManager from './utils/token-manager';
 
@@ -41,7 +41,6 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <AuthRoute
-          exact
           path="/"
           component={NavBar}
           authenticate={this.isLoggedIn}
@@ -51,6 +50,12 @@ class App extends React.Component {
             exact
             path="/"
             component={Rewards}
+            authenticate={this.isLoggedIn}
+          />
+          <AuthRoute
+            exact
+            path="/Map"
+            component={Map}
             authenticate={this.isLoggedIn}
           />
           <Route

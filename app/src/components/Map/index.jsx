@@ -36,11 +36,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
                 src={data.merchant_logo}
                 alt={`${data.merchant_name}'s logo`}
               />
-              <div className="map-marker__info">
-                <div className="map-marker__info__name">
-                  {data.merchant_name}
-                </div>
-              </div>
             </div>
           </RRLink>
         );
@@ -92,14 +87,18 @@ class Map extends React.Component {
     } = this.state;
 
     return (
-      <MyMapComponent
-        rewards={reward}
-        isMarkerShown
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
-        loadingElement={<Loader />}
-        containerElement={<div style={{ height: '400px' }} />}
-        mapElement={<div style={{ height: '100%' }} />}
-      />
+      <div className="App">
+        <div className="rewards__container">
+          <MyMapComponent
+            rewards={reward}
+            isMarkerShown
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
+            loadingElement={<Loader />}
+            containerElement={<div style={{ height: '400px' }} />}
+            mapElement={<div style={{ height: '100%' }} />}
+          />
+        </div>
+      </div>
     );
   }
 }
