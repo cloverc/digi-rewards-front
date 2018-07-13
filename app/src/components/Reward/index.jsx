@@ -4,7 +4,10 @@ import MerchantLogo from '../MerchantLogo';
 import RewardDescription from '../RewardDescription';
 import RewardProgress from '../RewardProgress';
 import TransactionCounter from '../TransactionCounter';
+import BigTick from '../BigTick';
 import './style.scss';
+
+const REWARD_TARGET = 9;
 
 class Reward extends Component {
 
@@ -23,7 +26,7 @@ class Reward extends Component {
   }
 
   componentDidMount() {
-    this.setState({ total: 8 });
+    this.setState({ total: 9 });
   }
 
   render() {
@@ -33,9 +36,11 @@ class Reward extends Component {
           <MerchantLogo />
           <div className="nested-items">
             <RewardDescription description="Reward Description" />
-            <RewardProgress percent={Math.round(this.state.total * 100) / 9} />
+            <RewardProgress percent={Math.round(this.state.total * 100) / REWARD_TARGET} />
           </div>
+          {/* { if (REWARD_TARGET === this.state.total)} */}
           <TransactionCounter total={9} />
+          <BigTick />
         </li>
         <li className="reward-item">
           <MerchantLogo />
