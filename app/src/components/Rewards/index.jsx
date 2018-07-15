@@ -11,6 +11,7 @@ class Rewards extends Component {
     super();
     this.state = {
       transaction: [],
+      rewards: [],
     };
   }
 
@@ -24,12 +25,25 @@ class Rewards extends Component {
   }
 
   render() {
+    const {
+      rewards,
+    } = this.state;
+
     return (
       <div className="App">
         <Account />
         <div className="rewards__container">
-          <ul className="rewards__list">
-            <Reward />
+          <ul className="rewards rewards__list">
+            {/* {
+              rewards.map(reward => ( */}
+                <Reward
+                  key={rewards.id}
+                  description={rewards.description}
+                  logo={rewards.logo}
+                  total={rewards.total}
+                />
+              {/* ))
+            } */}
           </ul>
         </div>
       </div>

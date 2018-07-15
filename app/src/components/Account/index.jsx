@@ -35,10 +35,9 @@ class Account extends React.Component {
       <div>
         <div className="monzo-accounts">
           <h1>
-            My Rewards
+            {this.state.account.description}'s Rewards
           </h1>
         </div>
-        <h2>Hello {this.state.account.description}, here are your rewards...</h2>
       </div>
     );
   }

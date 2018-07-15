@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from "axios";
+import axios from 'axios';
 import MerchantLogo from '../MerchantLogo';
 import RewardDescription from '../RewardDescription';
 import RewardProgress from '../RewardProgress';
@@ -31,9 +31,9 @@ class Reward extends Component {
 
   render() {
     return (
-      <div className="rewards">
+      <React.Fragment>
         <li className="reward-item">
-          <MerchantLogo />
+          <MerchantLogo logo="https://mondo-logo-cache.appspot.com/twitter/nuffieldhealth/?size=large" />
           <div className="nested-items">
             <RewardDescription description="Reward Description" />
             <RewardProgress percent={Math.round(this.state.total * 100) / REWARD_TARGET} />
@@ -43,14 +43,14 @@ class Reward extends Component {
           <BigTick />
         </li>
         <li className="reward-item">
-          <MerchantLogo />
+          <MerchantLogo logo="https://mondo-logo-cache.appspot.com/twitter/nuffieldhealth/?size=large" />
           <div className="nested-items">
             <RewardDescription description="Reward Description blah blah get a free coffee" />
             <RewardProgress percent={this.state.total} />
           </div>
           <TransactionCounter total={3} />
         </li>
-      </div>
+      </React.Fragment>
     );
   }
 }

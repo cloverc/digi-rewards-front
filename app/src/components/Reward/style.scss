@@ -19,6 +19,7 @@
   border-bottom: 1px solid $lighter-grey;
   display: flex;
   align-items: center;
+  min-height: 140px;
   cursor: pointer;
   transition: background-color .05s linear;
 }

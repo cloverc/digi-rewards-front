@@ -12,7 +12,7 @@ import TokenManager from './utils/token-manager';
 
 import './style.scss';
 
-const MyNewComponent = () => {
+const AppRoutes = () => {
   return (
     <React.Fragment>
       <NavBar />
@@ -40,18 +40,12 @@ class App extends React.Component {
     };
 
     this.handleLogin = this.handleLogin.bind(this);
-    /* this.handleLogout = this.handleLogout.bind(this); */
     this.isLoggedIn = this.isLoggedIn.bind(this);
   }
 
   handleLogin() {
     this.setState({ user: TokenManager.getTokenPayload() });
   }
-
-  /* handleLogout() {
-    TokenManager.removeToken();
-    this.setState({ user: null });
-  } */
 
   isLoggedIn() {
     return Boolean(this.state.user) && TokenManager.isTokenValid();
@@ -76,7 +70,7 @@ class App extends React.Component {
             )}
           />
           <AuthRoute
-            component={MyNewComponent}
+            component={AppRoutes}
             authenticate={this.isLoggedIn}
           />
         </Switch>
