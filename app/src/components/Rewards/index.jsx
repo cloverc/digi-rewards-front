@@ -10,7 +10,7 @@ class Rewards extends Component {
   constructor() {
     super();
     this.state = {
-      transaction: [],
+      // transaction: [],
       rewards: [],
     };
   }
@@ -18,8 +18,8 @@ class Rewards extends Component {
   componentDidMount() {
     axios.get('http://127.0.0.1:3000/transaction')
       .then((response) => {
-        this.setState({ transaction: response.data });
-        console.log('merchantID: ', this.state.transaction);
+        this.setState({ rewards: response.data });
+        console.log('merchantID: ', this.state.rewards);
       })
       .catch(error => console.log(error));
   }
@@ -34,16 +34,16 @@ class Rewards extends Component {
         <Account />
         <div className="rewards__container">
           <ul className="rewards rewards__list">
-            {/* {
-              rewards.map(reward => ( */}
+            {
+              rewards.map(reward => (
                 <Reward
-                  key={rewards.id}
-                  description={rewards.description}
-                  logo={rewards.logo}
-                  total={rewards.total}
+                  key={reward._id}
+                  description={reward.description}
+                  logo={reward.logo}
+                  total={reward.total}
                 />
-              {/* ))
-            } */}
+              ))
+            }
           </ul>
         </div>
       </div>

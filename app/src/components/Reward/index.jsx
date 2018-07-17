@@ -42,14 +42,6 @@ class Reward extends Component {
           <TransactionCounter total={9} />
           <BigTick />
         </li>
-        <li className="reward-item">
-          <MerchantLogo logo="https://mondo-logo-cache.appspot.com/twitter/nuffieldhealth/?size=large" />
-          <div className="nested-items">
-            <RewardDescription description="Reward Description blah blah get a free coffee" />
-            <RewardProgress percent={this.state.total} />
-          </div>
-          <TransactionCounter total={3} />
-        </li>
       </React.Fragment>
     );
   }
