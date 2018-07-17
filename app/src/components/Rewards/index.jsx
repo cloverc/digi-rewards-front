@@ -10,7 +10,6 @@ class Rewards extends Component {
   constructor() {
     super();
     this.state = {
-      // transaction: [],
       rewards: [],
     };
   }
@@ -39,8 +38,8 @@ class Rewards extends Component {
                 <Reward
                   key={reward._id}
                   description={reward.description}
-                  logo={reward.logo}
-                  total={reward.total}
+                  logo={reward.merchant_logo}
+                  count={reward.count}
                 />
               ))
             }

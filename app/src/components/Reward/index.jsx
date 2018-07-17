@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
+// import PropTypes from 'prop-types';
 import MerchantLogo from '../MerchantLogo';
 import RewardDescription from '../RewardDescription';
 import RewardProgress from '../RewardProgress';
@@ -9,42 +9,18 @@ import './style.scss';
 
 const REWARD_TARGET = 9;
 
-class Reward extends Component {
+const Reward = props => (
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      /* account: [{
-      id: '',
-      description: '',
-      created: '',
-      type: ''
-      }] */
-      total: 0,
-    };
-  }
-
-  componentDidMount() {
-    this.setState({ total: 9 });
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <li className="reward-item">
-          <MerchantLogo logo="https://mondo-logo-cache.appspot.com/twitter/nuffieldhealth/?size=large" />
-          <div className="nested-items">
-            <RewardDescription description="Reward Description" />
-            <RewardProgress percent={Math.round(this.state.total * 100) / REWARD_TARGET} />
-          </div>
-          {/* { if (REWARD_TARGET === this.state.total)} */}
-          <TransactionCounter total={9} />
-          <BigTick />
-        </li>
-      </React.Fragment>
-    );
-  }
-}
+  <React.Fragment>
+    <li className="reward-item">
+      <MerchantLogo logo={props.logo} />
+      <div className="nested-items">
+        <RewardDescription description={props.description} />
+        <RewardProgress percent={Math.round(props.count * 100) / REWARD_TARGET} />
+      </div>
+      {REWARD_TARGET === props.count ? <BigTick /> : <TransactionCounter count={props.count} />}
+    </li>
+  </React.Fragment>
+);
 
 export default Reward;
