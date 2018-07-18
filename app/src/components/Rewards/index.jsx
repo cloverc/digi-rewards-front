@@ -12,6 +12,7 @@ class Rewards extends Component {
     this.state = {
       rewards: [],
       loading: true,
+      test: [],
     };
   }
 
@@ -25,6 +26,11 @@ class Rewards extends Component {
         // console.log('merchantID: ', this.state.rewards);
       })
       .catch(error => console.log(error));
+    this.timer = setInterval(() => this.setState(prevState => ({ test: !prevState.test })), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
   }
 
   render() {
@@ -40,6 +46,8 @@ class Rewards extends Component {
           <React.Fragment>
             <Account />
             <div className="rewards__container">
+              {/* refreshes rewards container every 1 second */}
+              { this.state.test }
               <ul className="rewards rewards__list">
                 {
                 rewards.map(reward => (

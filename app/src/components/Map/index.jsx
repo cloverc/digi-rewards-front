@@ -88,13 +88,16 @@ class Map extends React.Component {
 
     return (
       <div className="App">
+        <h1>
+            Participating outlets near you
+        </h1>
         <div className="rewards__container">
           <MyMapComponent
             rewards={reward}
             isMarkerShown
             googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
             loadingElement={<Loader />}
-            containerElement={<div style={{ height: '400px' }} />}
+            containerElement={<div style={{ height: '450px' }} />}
             mapElement={<div style={{ height: '100%' }} />}
           />
         </div>

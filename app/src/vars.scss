@@ -38,14 +38,3 @@ $mobile-breakpoint: 800px;
   padding-left: $global-gutter;
   padding-right: $global-gutter;
 }
-
-// need to change to Sass
-:root {
-  --container: {
-    max-width: $body-width;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--global-gutter);
-    padding-right: var(--global-gutter);
-  }
-}
