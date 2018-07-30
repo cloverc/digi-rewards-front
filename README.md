@@ -1,6 +1,14 @@
-## React Front End for Monzo Digital Rewards Web App
+## Indespendent – Monzo Digital Rewards Web App
+
+MCR Codes Final Project
+----------------------------
+This is the React Front End for our Monzo digital rewards app.
+
+The app is designed to offer digital rewards for a digital bank. Users can register, earn and redeem rewards from participating merchants.
 
 Backend repo: https://github.com/SharifCoding/digi-reward-back
+
+![Screenshot](screenshot.png)
 
 #### Built-on:
 - [Node.js](https://nodejs.org/en/) - Node Package Manager
@@ -8,7 +16,6 @@ Backend repo: https://github.com/SharifCoding/digi-reward-back
 - [React Router](https://reacttraining.com/react-router/) - Declarative routing for React
 - [Express](http://expressjs.com/) - Web application framework
 - [Mongoose](http://mongoosejs.com/) - Elegant mongodb object modeling for node.js
-- [BCrypt](https://www.npmjs.com/package/bcrypt) - BCrypt algorithms based on Key Stretching
 - [JSON Web Tokens](https://jwt.io/) - JWT.IO allows you to decode, verify and generate JWT
 - [OAuth2.0](https://auth0.com/) - Grant limited access to an HTTP service, either on behalf of a resource owner
 
@@ -41,5 +48,3 @@ npm start --prefix api
 npm start --prefix app
 ```
 This will run the server and frontend, open via localtunnel(make sure its running as well) url to view it in the browser. If you make any changes and save the changes process will automatically refresh and you will be able to see the results in the browser.
-
-If you want to end the process hold `control` and press `c` in mac, if you are not using mac hold `ctrl` and press `c`.
