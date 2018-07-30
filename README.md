@@ -1,7 +1,5 @@
-## Indespendent – Monzo Digital Rewards Web App
+## Indespendent – MCR Codes Final Project
 
-MCR Codes Final Project
-----------------------------
 This is the React Front End for our Monzo digital rewards app.
 
 The app is designed to offer digital rewards for a digital bank. Users can register, earn and redeem rewards from participating merchants.
@@ -23,7 +21,7 @@ Backend repo: https://github.com/SharifCoding/digi-reward-back
 - Create a client on Monzo - [https://docs.monzo.com/#authentication](https://docs.monzo.com/#authentication)
 - Set *application name* as **authentication-example**
 - Set *homepage url* as **localhost:8080**
-- Set *callback url* as **localhost:8080/login-github**
+- Set *callback url* as **localhost:8080/login-monzo**
 - take note of your client id and client secret - you will need them shortly
 
 #### Initial Setup for `/api` directory:
@@ -31,10 +29,10 @@ Backend repo: https://github.com/SharifCoding/digi-reward-back
 - Create `.env` file in the root `/api` folder
 - Add newly created Mongo string `DATABASE_URL=mongodb://user:password@ds123456.mlab.com:23456/database-name`
 - Add `JWT_SECRET` to `.env` - this can be anything
-- Add your client id and client secret to `.env` as `MONZO_CLIENT_ID`, `MONZO_CLIENT_SECRET`, and `REDIRECT_URL`.
+- Add your client id and client secret to `.env` as `MONZO_CLIENT_ID`, `MONZO_CLIENT_SECRET` and `REDIRECT_URL`.
 
 #### Initial Setup for `/app` directory:
-- Create a `.env` in the `/app` directory with a `MONZO_CLIENT_ID` and `REDIRECT_URL`.
+- Create a `.env` in the `/app` directory with a `MONZO_CLIENT_ID`, `REDIRECT_URL` and `GOOGLE_MAPS_API_KEY`.
 
 #### Running the App:
 To run this project you will need to download it onto your local machine and install all dependencies.
@@ -48,3 +46,8 @@ npm start --prefix api
 npm start --prefix app
 ```
 This will run the server and frontend, open via localtunnel(make sure its running as well) url to view it in the browser. If you make any changes and save the changes process will automatically refresh and you will be able to see the results in the browser.
+
+#### Team members:
+- [Clover Chapman](https://github.com/cloverc)
+- [Bradley Leadbetter ](https://github.com/bradlead)
+- [Osman Sharif](https://github.com/SharifCoding)
